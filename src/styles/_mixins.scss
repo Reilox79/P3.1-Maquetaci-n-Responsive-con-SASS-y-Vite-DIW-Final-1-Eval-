@@ -1,0 +1,53 @@
+@use "sass:map";
+@use "variables" as *;
+
+$breakpoints: (
+  "small": (
+    max-width: 599px,
+  ),
+  "medium": (
+    min-width: 600px,
+    max-width: 1199px,
+  ),
+  "large": (
+    min-width: 1200px,
+  ),
+);
+
+@mixin respond-to($name) {
+  $rules: map.get($breakpoints, $name);
+
+  @if $rules {
+    $query: "";
+    @each $prop, $value in $rules {
+      @if $query != "" {
+        $query: $query + " and ";
+      }
+      $query: $query + "(#{$prop}: #{$value})";
+    }
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error "No existe el breakpoint `#{$name}`";
+  }
+}
+
+@mixin button($bg, $bg-hover) {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-xs;
+  padding: $space-sm $space-lg;
+  border: 0;
+  border-radius: $radius-full;
+  background-color: $bg;
+  color: $color-white;
+  font-family: $font-body;
+  font-weight: $font-semibold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $bg-hover;
+  }
+}
