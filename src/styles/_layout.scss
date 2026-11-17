@@ -1,1 +1,83 @@
 @use "globals" as *;
+
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: $color-bg;
+  color: $color-text;
+  font-family: $font-body;
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-heading;
+}
+
+h1 {
+  font-size: $font-size-display;
+  line-height: $line-height-display;
+  font-weight: $font-bold;
+
+  @include respond-to("small") {
+    font-size: $font-size-display-mobile;
+    line-height: $line-height-display-mobile;
+  }
+}
+
+h2 {
+  font-size: $font-size-h2;
+  line-height: $line-height-h2;
+  font-weight: $font-semibold;
+
+  @include respond-to("small") {
+    font-size: $font-size-h2-mobile;
+    line-height: $line-height-h2-mobile;
+  }
+}
+
+h3 {
+  font-size: $font-size-h3;
+  line-height: $line-height-h3;
+  font-weight: $font-semibold;
+
+  @include respond-to("small") {
+    font-size: $font-size-h3-mobile;
+    line-height: $line-height-h3-mobile;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
