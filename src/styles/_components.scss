@@ -1,1 +1,76 @@
 @use "globals" as *;
+
+.btn {
+  &::after {
+    content: "";
+    width: $icon-md;
+    height: $icon-md;
+    background: url("../assets/icon-arrow-right-white.svg") no-repeat center / contain;
+  }
+
+  &--play::after {
+    background-image: url("../assets/icon-play-white.svg");
+  }
+
+  &--primary {
+    @include button($color-primary, $color-primary-hover);
+  }
+
+  &--secondary {
+    @include button($color-secondary, $color-secondary-hover);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $nav-height;
+  padding: 0 $grid-margin;
+  background-color: $color-card;
+  border-bottom: $border-width solid $color-border;
+
+  &__logo {
+    font-family: $font-heading;
+    font-size: $font-size-h3;
+    font-weight: $font-semibold;
+  }
+
+  &__menu {
+    display: none;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  @include respond-to("small") {
+    height: $nav-height-mobile;
+    padding: 0 $grid-margin-mobile;
+
+    &__logo {
+      font-size: $font-size-h3-mobile;
+    }
+
+    &__menu {
+      display: block;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: $space-lg;
+
+  &__list {
+    display: flex;
+    gap: $space-lg;
+    font-weight: $font-semibold;
+  }
+
+  @include respond-to("small") {
+    display: none;
+  }
+}
+
