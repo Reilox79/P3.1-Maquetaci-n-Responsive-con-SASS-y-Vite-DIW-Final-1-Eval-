@@ -1,0 +1,91 @@
+// Colores
+$color-primary: #0e8f76;
+$color-primary-hover: #0b7863;
+$color-primary-light: #e6f4f1;
+
+$color-secondary: #1b2a41;
+$color-secondary-hover: #2b3a55;
+
+$color-accent: #ff7a45;
+
+$color-white: #ffffff;
+$color-bg: #faf8f3;
+$color-bg-section: #f3efe6;
+$color-card: $color-white;
+
+$color-text: $color-secondary;
+$color-text-secondary: #374151;
+$color-text-muted: #6b7280;
+
+$color-border: #e3ded3;
+$color-border-focus: $color-primary;
+
+// Tipografia
+$font-heading: "Poppins", sans-serif;
+$font-body: "Inter", sans-serif;
+
+$font-regular: 400;
+$font-semibold: 600;
+$font-bold: 700;
+
+$font-size-display: 56px;
+$line-height-display: 64px;
+$font-size-h1: 44px;
+$line-height-h1: 52px;
+$font-size-h2: 32px;
+$line-height-h2: 40px;
+$font-size-h3: 24px;
+$line-height-h3: 32px;
+$font-size-large: 18px;
+$line-height-large: 28px;
+$font-size-body: 16px;
+$line-height-body: 24px;
+$font-size-small: 14px;
+$line-height-small: 20px;
+$font-size-caption: 12px;
+$line-height-caption: 16px;
+
+// Espaciado
+$space-xs: 8px;
+$space-sm: 12px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+$space-section: 96px;
+
+// Bordes y esquinas
+$border-width: 1.5px;
+$radius-md: 12px;
+$radius-lg: 24px;
+$radius-full: 999px;
+
+// Iconos
+$icon-md: 24px;
+$icon-lg: 32px;
+$icon-xl: 48px;
+$icon-stroke: 2px;
+
+// Rejilla escritorio
+$grid-max-width: 1440px;
+$grid-margin: 80px;
+$grid-columns: 12;
+$grid-gutter: 35px;
+$nav-height: 96px;
+
+// Movil
+$font-size-display-mobile: 36px;
+$line-height-display-mobile: 44px;
+$font-size-h1-mobile: 32px;
+$line-height-h1-mobile: 40px;
+$font-size-h2-mobile: 24px;
+$line-height-h2-mobile: 32px;
+$font-size-h3-mobile: 20px;
+$line-height-h3-mobile: 28px;
+$font-size-large-mobile: 16px;
+$line-height-large-mobile: 24px;
+
+$grid-margin-mobile: 16px;
+$grid-columns-mobile: 4;
+$grid-gutter-mobile: 16px;
+$space-section-mobile: 48px;
+$nav-height-mobile: 64px;
