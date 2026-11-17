@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear cuenta · Vita</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a class="header__logo" href="./index.html">Vita</a>
+      <a class="btn btn--secondary" href="./index.html">Volver al inicio</a>
+    </header>
+
+    <main class="register">
+      <section class="register__intro">
+        <h1>Crea tu cuenta</h1>
+        <p>Empieza tu primera semana gratis y recibe tu plan de entrenamiento personalizado.</p>
+        <p class="badge">
+          <img src="./assets/icon-flame-green.svg" alt="" />
+          Primera semana gratis
+        </p>
+      </section>
+
+      <section class="register__form">
+        <form class="form" action="#">
+          <h2>Tus datos</h2>
+
+          <div class="field">
+            <label class="field__label" for="email">Correo electrónico</label>
+            <div class="field__control">
+              <img src="./assets/icon-mail-dark.svg" alt="" />
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="tu@email.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="password">Contraseña</label>
+            <div class="field__control">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="new-password"
+                minlength="8"
+                aria-describedby="password-help"
+                required
+              />
+            </div>
+            <p class="field__help" id="password-help">
+              Mínimo 8 caracteres. Usa mayúsculas, minúsculas y números.
+            </p>
+          </div>
+
+          <button class="btn btn--primary" type="submit">Crear cuenta</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Vita · Proyecto DIW</p>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
