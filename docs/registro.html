@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear cuenta · Vita</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" crossorigin href="./assets/main-CpQbrFTJ.css">
+  </head>
+  <body>
+    <header class="header">
+      <a class="header__logo" href="./index.html">Vita</a>
+      <a class="btn btn--secondary" href="./index.html">Volver al inicio</a>
+    </header>
+
+    <main class="register">
+      <section class="register__intro">
+        <h1>Crea tu cuenta</h1>
+        <p>Empieza tu primera semana gratis y recibe tu plan de entrenamiento personalizado.</p>
+        <p class="badge">
+          <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8.5%2014.5C9.16304%2014.5%209.79893%2014.2366%2010.2678%2013.7678C10.7366%2013.2989%2011%2012.663%2011%2012C11%2010.62%2010.5%2010%2010%209C8.928%206.857%209.776%204.946%2012%203C12.5%205.5%2014%207.9%2016%209.5C18%2011.1%2019%2013%2019%2015C19%2015.9193%2018.8189%2016.8295%2018.4672%2017.6788C18.1154%2018.5281%2017.5998%2019.2997%2016.9497%2019.9497C16.2997%2020.5998%2015.5281%2021.1154%2014.6788%2021.4672C13.8295%2021.8189%2012.9193%2022%2012%2022C11.0807%2022%2010.1705%2021.8189%209.32122%2021.4672C8.47194%2021.1154%207.70026%2020.5998%207.05025%2019.9497C6.40024%2019.2997%205.88463%2018.5281%205.53284%2017.6788C5.18106%2016.8295%205%2015.9193%205%2015C5%2013.847%205.433%2012.706%206%2012C6%2012.663%206.26339%2013.2989%206.73223%2013.7678C7.20107%2014.2366%207.83696%2014.5%208.5%2014.5Z'%20stroke='%230E8F76'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%20vector-effect='non-scaling-stroke'/%3e%3c/svg%3e" alt="" />
+          Primera semana gratis
+        </p>
+      </section>
+
+      <section class="register__form">
+        <form class="form" action="#">
+          <h2>Tus datos</h2>
+
+          <div class="field">
+            <label class="field__label" for="email">Correo electrónico</label>
+            <div class="field__control">
+              <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M20%204H4C2.89543%204%202%204.89543%202%206V18C2%2019.1046%202.89543%2020%204%2020H20C21.1046%2020%2022%2019.1046%2022%2018V6C22%204.89543%2021.1046%204%2020%204Z'%20stroke='%231B2A41'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%20vector-effect='non-scaling-stroke'/%3e%3cpath%20d='M22%207L13.03%2012.7C12.7213%2012.8934%2012.3643%2012.996%2012%2012.996C11.6357%2012.996%2011.2787%2012.8934%2010.97%2012.7L2%207'%20stroke='%231B2A41'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%20vector-effect='non-scaling-stroke'/%3e%3c/svg%3e" alt="" />
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="tu@email.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="password">Contraseña</label>
+            <div class="field__control">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="new-password"
+                minlength="8"
+                aria-describedby="password-help"
+                required
+              />
+            </div>
+            <p class="field__help" id="password-help">
+              Mínimo 8 caracteres. Usa mayúsculas, minúsculas y números.
+            </p>
+          </div>
+
+          <button class="btn btn--primary" type="submit">Crear cuenta</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Vita · Proyecto DIW</p>
+    </footer>
+
+  </body>
+</html>
