@@ -5,8 +5,81 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vita</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <header class="header">
+      <a class="header__logo" href="./index.html">Vita</a>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#programas">Programas</a></li>
+          <li><a href="#comunidad">Comunidad</a></li>
+          <li><a href="#precios">Precios</a></li>
+        </ul>
+        <a class="btn btn--secondary" href="./registro.html">Iniciar sesión</a>
+      </nav>
+
+      <button class="header__menu" type="button" aria-label="Abrir menú">
+        <img src="./assets/icon-menu-dark.svg" alt="" />
+      </button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__text">
+          <h1>Muévete mejor, vive mejor</h1>
+          <p>Empieza tu primera semana gratis y recibe tu plan de entrenamiento personalizado.</p>
+          <a class="btn btn--secondary btn--play" href="#programas">Ver cómo funciona</a>
+        </div>
+
+        <div class="hero__stats">
+          <img src="./assets/icon-flame-dark.svg" alt="" />
+          <p class="hero__number">+12.000</p>
+          <p class="hero__label">personas entrenan con Vita cada semana</p>
+        </div>
+      </section>
+
+      <section class="features" id="programas">
+        <h2>Todo lo que necesitas para empezar</h2>
+        <p>Rutinas, seguimiento y comunidad para que te sientas mejor desde el primer día.</p>
+
+        <div class="features__list">
+          <article class="card">
+            <img src="./assets/icon-flame-green.svg" alt="" />
+            <h3>Entrena a tu ritmo</h3>
+            <p>Rutinas de 10 a 45 minutos que se adaptan a tu día, sin equipamiento.</p>
+          </article>
+
+          <article class="card">
+            <img src="./assets/icon-heart-green.svg" alt="" />
+            <h3>Cuida tu salud</h3>
+            <p>Seguimiento de sueño, hidratación y descanso para sentirte con energía.</p>
+          </article>
+
+          <article class="card">
+            <img src="./assets/icon-flame-green.svg" alt="" />
+            <h3>Conéctate con otros</h3>
+            <p>Únete a una comunidad de fitness y comparte tus logros y desafíos.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta">
+        <h2>Tu primera semana es gratis</h2>
+        <a class="btn btn--primary" href="./registro.html">Empezar ahora</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Vita · Proyecto DIW</p>
+    </footer>
+
     <script type="module" src="./main.js"></script>
   </body>
 </html>
