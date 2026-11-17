@@ -164,3 +164,53 @@
   }
 }
 
+.features {
+  padding: $space-section $grid-margin;
+  background-color: $color-bg-section;
+  text-align: center;
+
+  > p {     // This targets the direct child <p> of .features
+    margin-top: $space-xs;
+    color: $color-text-secondary;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: $grid-gutter;
+    margin-top: $space-xl;
+  }
+
+  @include respond-to("small") {
+    padding: $space-section-mobile $grid-margin-mobile;
+
+    &__list {
+      grid-template-columns: 1fr;
+      gap: $grid-gutter-mobile;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $space-md;
+  padding: $space-lg $space-xl;
+  border: $border-width solid $color-border;
+  background-color: $color-card;
+  text-align: left;
+
+  img {
+    width: 64px;
+    height: 64px;
+    padding: $space-md;
+    border-radius: $radius-full;
+    background-color: $color-primary-light;
+  }
+
+  p {
+    color: $color-text-secondary;
+  }
+}
+
