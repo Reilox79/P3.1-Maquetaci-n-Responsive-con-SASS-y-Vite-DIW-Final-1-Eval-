@@ -1,83 +1,283 @@
-@use "globals" as *;
+@use "variables" as *;
+@use "mixins" as *;
 
-html {
-  font-size: 16px;
-  box-sizing: border-box;
-}
+// Cabecera
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $nav-height;
+  padding: 0 $grid-margin;
+  background-color: $color-card;
+  border-bottom: $border-width solid $color-border;
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+  &__logo {
+    font-family: $font-heading;
+    font-size: $font-size-h3;
+    font-weight: $font-semibold;
+  }
 
-body {
-  margin: 0;
-  background-color: $color-bg;
-  color: $color-text;
-  font-family: $font-body;
-  font-size: $font-size-body;
-  line-height: $line-height-body;
-}
-
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-}
-
-h1,
-h2,
-h3 {
-  font-family: $font-heading;
-}
-
-h1 {
-  font-size: $font-size-display;
-  line-height: $line-height-display;
-  font-weight: $font-bold;
+  &__menu {
+    display: none;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
 
   @include respond-to("small") {
-    font-size: $font-size-display-mobile;
-    line-height: $line-height-display-mobile;
+    height: $nav-height-mobile;
+    padding: 0 $grid-margin-mobile;
+
+    &__logo {
+      font-size: $font-size-h3-mobile;
+    }
+
+    &__menu {
+      display: block;
+    }
   }
 }
 
-h2 {
-  font-size: $font-size-h2;
-  line-height: $line-height-h2;
+.nav {
+  display: flex;
+  align-items: center;
+  gap: $space-lg;
+
+  &__list {
+    display: flex;
+    gap: $space-lg;
+    font-weight: $font-semibold;
+  }
+
+  // Menu desplegable en movil
+  @include respond-to("small") {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: $space-lg $grid-margin-mobile;
+    background-color: $color-card;
+    border-bottom: $border-width solid $color-border;
+
+    &--open {
+      display: flex;
+    }
+
+    &__list {
+      flex-direction: column;
+    }
+  }
+}
+
+// Portada
+.hero {
+  @include grid;
+  row-gap: $space-xl;
+  align-items: center;
+  padding: $space-section $grid-margin;
+
+  &__text {
+    grid-column: 1 / span 6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $space-xl;
+
+    p {
+      font-size: $font-size-large;
+      line-height: $line-height-large;
+      color: $color-text-secondary;
+    }
+  }
+
+  &__stats {
+    grid-column: 9 / span 4;
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+    padding: $space-lg $space-xl;
+    border-radius: $radius-lg;
+    background-color: $color-primary;
+    color: $color-white;
+
+    img {
+      width: 80px;
+      height: 80px;
+      padding: $space-md;
+      border-radius: $radius-full;
+      background-color: $color-accent;
+    }
+  }
+
+  &__number {
+    font-family: $font-heading;
+    font-size: $font-size-display;
+    line-height: $line-height-display;
+    font-weight: $font-bold;
+  }
+
+  &__label {
+    font-size: $font-size-large;
+    line-height: $line-height-large;
+  }
+
+  @include respond-to("medium") {
+    grid-template-columns: 1fr;
+
+    &__text,
+    &__stats {
+      grid-column: 1 / -1;
+    }
+
+    &__stats {
+      max-width: 405px;
+    }
+  }
+
+  @include respond-to("small") {
+    padding: $space-xl $grid-margin-mobile;
+
+    &__text,
+    &__stats {
+      grid-column: 1 / -1;
+    }
+
+    &__text p,
+    &__label {
+      font-size: $font-size-large-mobile;
+      line-height: $line-height-large-mobile;
+    }
+
+    &__number {
+      font-size: $font-size-display-mobile;
+      line-height: $line-height-display-mobile;
+    }
+  }
+}
+
+// Caracteristicas
+.features {
+  padding: $space-section $grid-margin;
+  background-color: $color-bg-section;
+  text-align: center;
+
+  > p {
+    margin-top: $space-xs;
+    color: $color-text-secondary;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: $grid-gutter;
+    margin-top: $space-xl;
+  }
+
+  @include respond-to("small") {
+    padding: $space-section-mobile $grid-margin-mobile;
+
+    &__list {
+      grid-template-columns: 1fr;
+      gap: $grid-gutter-mobile;
+    }
+  }
+}
+
+// Banner
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $space-md;
+  min-height: 352px;
+  padding: $space-section $grid-margin;
+  background-image:
+    linear-gradient(rgba($color-bg, 0.6), rgba($color-bg, 0.6)),
+    url("../assets/ciclistas.png");
+  background-size: cover;
+  background-position: center 25%;
+  text-align: center;
+
+  h2 {
+    font-size: $font-size-h1;
+    line-height: $line-height-h1;
+    font-weight: $font-bold;
+  }
+
+  @include respond-to("small") {
+    padding: $space-section-mobile $grid-margin-mobile;
+
+    h2 {
+      font-size: $font-size-h1-mobile;
+      line-height: $line-height-h1-mobile;
+    }
+  }
+}
+
+// Registro
+.register {
+  @include grid;
+  row-gap: $space-xl;
+  align-items: center;
+  padding: $space-section $grid-margin;
+
+  &__intro {
+    grid-column: 1 / span 6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $space-xl;
+
+    p:not(.badge) {
+      font-size: $font-size-large;
+      line-height: $line-height-large;
+      color: $color-text-secondary;
+    }
+  }
+
+  &__form {
+    grid-column: 8 / span 5;
+  }
+
+  @include respond-to("medium") {
+    grid-template-columns: 1fr;
+
+    &__intro,
+    &__form {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @include respond-to("small") {
+    padding: $space-xl $grid-margin-mobile $space-section-mobile;
+
+    &__intro,
+    &__form {
+      grid-column: 1 / -1;
+    }
+
+    &__intro p:not(.badge) {
+      font-size: $font-size-large-mobile;
+      line-height: $line-height-large-mobile;
+    }
+  }
+}
+
+// Pie
+.footer {
+  padding: $space-lg $grid-margin;
+  font-size: $font-size-caption;
+  line-height: $line-height-caption;
   font-weight: $font-semibold;
+  color: $color-text-muted;
 
   @include respond-to("small") {
-    font-size: $font-size-h2-mobile;
-    line-height: $line-height-h2-mobile;
+    padding: $space-lg $grid-margin-mobile;
   }
-}
-
-h3 {
-  font-size: $font-size-h3;
-  line-height: $line-height-h3;
-  font-weight: $font-semibold;
-
-  @include respond-to("small") {
-    font-size: $font-size-h3-mobile;
-    line-height: $line-height-h3-mobile;
-  }
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }

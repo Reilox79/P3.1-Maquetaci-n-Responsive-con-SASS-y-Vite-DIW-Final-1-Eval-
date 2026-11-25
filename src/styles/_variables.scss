@@ -24,7 +24,6 @@ $color-border-focus: $color-primary;
 $font-heading: "Poppins", sans-serif;
 $font-body: "Inter", sans-serif;
 
-$font-regular: 400;
 $font-semibold: 600;
 $font-bold: 700;
 
@@ -61,12 +60,8 @@ $radius-full: 999px;
 
 // Iconos
 $icon-md: 24px;
-$icon-lg: 32px;
-$icon-xl: 48px;
-$icon-stroke: 2px;
 
 // Rejilla escritorio
-$grid-max-width: 1440px;
 $grid-margin: 80px;
 $grid-columns: 12;
 $grid-gutter: 35px;

@@ -2,34 +2,26 @@
 @use "variables" as *;
 
 $breakpoints: (
-  "small": (
-    max-width: 599px,
-  ),
-  "medium": (
-    min-width: 600px,
-    max-width: 1199px,
-  ),
-  "large": (
-    min-width: 1200px,
-  ),
+  "small": "(max-width: 599px)",
+  "medium": "(min-width: 600px) and (max-width: 1199px)",
+  "large": "(min-width: 1200px)",
 );
 
 @mixin respond-to($name) {
-  $rules: map.get($breakpoints, $name);
+  @media #{map.get($breakpoints, $name)} {
+    @content;
+  }
+}
 
-  @if $rules {
-    $query: "";
-    @each $prop, $value in $rules {
-      @if $query != "" {
-        $query: $query + " and ";
-      }
-      $query: $query + "(#{$prop}: #{$value})";
-    }
-    @media #{$query} {
-      @content;
-    }
-  } @else {
-    @error "No existe el breakpoint `#{$name}`";
+// Rejilla de 12 columnas en escritorio y 4 en movil
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);
+  column-gap: $grid-gutter;
+
+  @include respond-to("small") {
+    grid-template-columns: repeat($grid-columns-mobile, 1fr);
+    column-gap: $grid-gutter-mobile;
   }
 }
 
